@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "QRCode";
+}
+
+ <div class="text-center">
+    <h1 class="display-4">Point your phone's camera!</h1>
+   
+</div>
+<hr/>
+@using (Html.BeginForm("Index", "QRCode", FormMethod.Post))
+{
+    <div class="text-center ">
+        <input type="text" name="Text" />
+        <input type="submit" class="btn btn-primary" value="Generate" />
+    </div>
+    
+}
+
+<hr />
+
+@if (ViewBag.QRCode != null)
+{
+    <div class="text-center ">
+        <img src="@ViewBag.QRCode" style="width:200px;height:200px;"  />
+    </div>
+    
+}
+
+ 
+
